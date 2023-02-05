@@ -308,9 +308,9 @@ console.log(age1, age3)
 
 ///ARROW FUNCTION 
 
-const calcAge4 = birthYear => 2037 - birthYear;
-const age4 = calcAge4(1994)
-console.log(age4)
+// const calcAge4 = birthYear => 2037 - birthYear;
+// const age4 = calcAge4(1994)
+// console.log(age4)
 
 const yearUntillRetirement = (birthYear, firstName) => {
     const age = 2023 - birthYear;
@@ -321,6 +321,90 @@ const yearUntillRetirement = (birthYear, firstName) => {
 
 console.log(yearUntillRetirement(1997, 'Akinbobola'))
 console.log(yearUntillRetirement(1989, 'sunday'))
+
+
+////FUNCTION CALLING OTHER FUNCTION
+
+function cutFruit(fruit) {
+    return fruit * 4
+}
+
+
+function fruitMixer (apples, oranges){
+
+    const applePieces = cutFruit(apples);
+    const orangePieces = cutFruit(oranges);
+
+    const fruit = `Fruits with ${applePieces} apples and ${orangePieces} oranges`;
+
+    return fruit;
+
+}
+
+console.log(fruitMixer(2, 3));
+
+///CODING CHALLENGE 4
+/***********************
+ 
+Back to the two gymnastics teams, the Dolphins and the Koalas! There is a new
+gymnastics discipline, which works differently.
+Each team competes 3 times, and then the average of the 3 scores is calculated (so
+one average score per team).
+A team only wins if it has at least double the average score of the other team.
+Otherwise, no team wins!
+Your tasks:
+1. Create an arrow function 'calcAverage' to calculate the average of 3 scores
+2. Use the function to calculate the average for both teams
+3. Create a function 'checkWinner' that takes the average score of each team
+as parameters ('avgDolhins' and 'avgKoalas'), and then logs the winner
+to the console, together with the victory points, according to the rule above.
+Example: "Koalas win (30 vs. 13)"
+4. Use the 'checkWinner' function to determine the winner for both Data 1 and
+Data 2
+5. Ignore draws this time
+Test data:
+§ Data 1: Dolphins score 44, 23 and 71. Koalas score 65, 54 and 49
+§ Data 2: Dolphins score 85, 54 and 41. Koalas score 23, 34 and 27
+Hints:
+§ To calculate average of 3 values, add them all together and divide by 3
+§ To check if number A is at least double number B, check for A >= 2 * B.
+Apply this to the team's average scores �
+***********************/
+
+const calcAge4 = birthYear => 2037 - birthYear;
+const age4 = calcAge4(1994)
+console.log(age4)
+
+    ////Arrow function
+// const calcAverage = scores => (scores, scores, scores) / 3; This was wrong because it was not added
+
+const calcAverage = (scores1, scores2, scores3) => (scores1 + scores2 + scores3 ) / 3;
+
+    ////Arrow function used in calculating average score
+
+    const avgDolhins = calcAverage(44, 23, 71);
+    console.log(avgDolhins)
+    const avgKoalas = calcAverage(65, 54, 49);
+    console.log(avgKoalas)
+
+    ///Function to check the winner
+
+    const checkWinner = (avgDolhins, avgKoalas) => {
+        if (avgDolhins >= 2 * avgKoalas ) {
+            return `Dolhins wins with ${avgDolhins} while Koalas has ${avgKoalas}`;
+        } else if (avgKoalas >= 2 * avgDolhins){
+            return `Koalas wins with ${avgKoalas} while Dolhins has ${avgDolhins}`;
+        } else {
+            return `Draw`;
+        }
+    }
+
+    console.log(checkWinner(avgDolhins, avgKoalas))
+
+    
+
+    
+
 
 
 
