@@ -1,3 +1,7 @@
+'use strict';
+
+
+
 /*  CODING CHALLENGE 1
 Mark and John are trying to compare their BMI (Body Mass Index), which is
 calculated using the formula:
@@ -261,14 +265,62 @@ Hints:
 */
 
 
+const ag = 15;
+const drink = ag >= 18 ? 'wine: 🍷' : 'water 💧';
+console.log(drink)
 
 
-
-const bill = 275;
+const bill = 40;
 const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
 
 console.log(`The bill was ${bill}, the tip was ${tip}, and the total value is${bill + tip}`);
 
+
+function foodProcessors(apples, oranges){
+    // console.log(apples, oranges);
+
+    const juice = `Juice with ${apples} apple and ${oranges} orange`;
+    return juice; 
+}
+
+const appleJuice = foodProcessors(5, 0);
+const appleOrangeJuice = foodProcessors(10, 8);
+console.log(appleJuice); 
+console.log(appleOrangeJuice); 
+
+///FUNCTION DECLARATION
+
+function calcAge1(birthYear) {
+
+    return 2023 - birthYear;
+}
+
+const age1 = calcAge1(1997)
+
+///FUNCTION EXPRESSION
+
+const calcAge2 = function(birthYear) {
+    return 2023 - birthYear
+}
+const age3 = calcAge2(2010)
+
+console.log(age1, age3)
+
+///ARROW FUNCTION 
+
+const calcAge4 = birthYear => 2037 - birthYear;
+const age4 = calcAge4(1994)
+console.log(age4)
+
+const yearUntillRetirement = (birthYear, firstName) => {
+    const age = 2023 - birthYear;
+    const retirement = 65 - age
+
+    return `${firstName} retires in ${retirement} years`;
+}
+
+console.log(yearUntillRetirement(1997, 'Akinbobola'))
+console.log(yearUntillRetirement(1989, 'sunday'))
 
 
 
