@@ -293,7 +293,7 @@ console.log(appleOrangeJuice);
 function calcAge1(birthYear) {
 
     return 2023 - birthYear;
-}
+} 
 
 const age1 = calcAge1(1997)
 
@@ -400,6 +400,27 @@ const calcAverage = (scores1, scores2, scores3) => (scores1 + scores2 + scores3 
     }
 
     console.log(checkWinner(avgDolhins, avgKoalas))
+
+    ///ARRAYS
+
+    let friends = ['Bimbo', 'Bolu', 'Sunday'];
+    console.log(friends[0])
+    friends.push('Froday', 'Banji', 'Precious', 'Saviour')
+    console.log(friends)
+    friends.shift([2])
+    console.log(friends)
+
+    const years = [1995, 1996, 1997, 1998, 1999];
+    const age5 = calcAge1(years[0])
+    const age6 = calcAge1(years[1])
+    const age7 = calcAge1(years[years.length -1])
+
+    console.log(age5, age6, age7)
+
+    const finalAge = [calcAge1(years[0]), calcAge1(years[1]), calcAge1(years[years.length -1])]
+    console.log(finalAge)
+
+    
 
     
 
