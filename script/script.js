@@ -404,11 +404,48 @@ const calcAverage = (scores1, scores2, scores3) => (scores1 + scores2 + scores3 
     ///ARRAYS
 
     let friends = ['Bimbo', 'Bolu', 'Sunday'];
-    console.log(friends[0])
+    console.log(friends[0]);
+
+    ///This is used to add a new element to an array at the end
+
     friends.push('Froday', 'Banji', 'Precious', 'Saviour')
     console.log(friends)
+
+    ////This is to remove the last element of an array
+
+    const popped = friends.pop()
+    // console.log(popped)
+
+    ///This is used to add element at the beginning of an array
+
+    friends.unshift('Expression')
+    console.log(friends)
+    console.log(`${friends[0]} was added to the beginning of the array`)
+
+
+
+    //This is to remove the first element from an array
+
     friends.shift([2])
     console.log(friends)
+
+    ///This is to locate the location of an element in an array
+
+    console.log(friends.indexOf('Bimbo'))
+    console.log(friends.indexOf('Bobola'))
+
+
+    ////This is to check if an element exists in an array
+    console.log(friends.includes('Tinubu'))
+    
+
+
+
+
+
+
+    ///Calculation with arrays
+
 
     const years = [1995, 1996, 1997, 1998, 1999];
     const age5 = calcAge1(years[0])
@@ -420,7 +457,103 @@ const calcAverage = (scores1, scores2, scores3) => (scores1 + scores2 + scores3 
     const finalAge = [calcAge1(years[0]), calcAge1(years[1]), calcAge1(years[years.length -1])]
     console.log(finalAge)
 
-    
+
+/* 
+  CODING CHALLENGE 5
+
+Steven is still building his tip calculator, using the same rules as before: Tip 15% of
+the bill if the bill value is between 50 and 300, and if the value is different, the tip is
+20%.
+Your tasks:
+1. Write a function 'calcTip' that takes any bill value as an input and returns
+the corresponding tip, calculated based on the rules above (you can check out
+the code from first tip calculator challenge if you need to). Use the function
+type you like the most. Test the function using a bill value of 100
+2. And now let's use arrays! So create an array 'bills' containing the test data
+below
+3. Create an array 'tips' containing the tip value for each bill, calculated from
+the function you created before
+4. Bonus: Create an array 'total' containing the total values, so the bill + tip
+Test data: 125, 555 and 44
+Hint: Remember that an array needs a value in each position, and that value can
+actually be the returned value of a function! So you can just call a function as array
+values (so don't store the tip values in separate variables first, but right in the new
+array) �
+*/
+
+//question 1
+
+function calcTip(bill) {
+    const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
+
+    return tip;
+}
+
+/* Meaning of this tenary operator
+
+ const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
+
+ if (bill <= 300 && bill >= 50) { 
+    return bill * 0.15;
+ } else {
+    return bill * 0.2;
+ }
+*/
+
+//question 2
+const bills = [125, 555, 44, 100, 200];
+
+
+
+// const finalBills = bills.map(calcTip);
+// console.log(finalBills)
+
+
+//Question 3
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2]), calcTip(bills[3]), calcTip(bills[4])]
+console.log(tips, bills)
+
+//Question 4
+
+const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2], bills[3] + tips[3], bills[4] + tips[4]]
+
+console.log(total)
+
+////OBJECT IN JAVASCRIPT
+
+const cyclo = {
+    nameOfOrganization: 'Cyclo',
+    courses: ['HTML', 'CSS', 'JS', 'Python'],
+    teacher: {'name': 'Mike', 'age': 25},
+    hr: 'Miss. Jenifa',
+    dateOfEstablishment: '2020-01-01',
+    location: `7, Oweh street fadeyi beside WAEC`,
+    ownership: 'Private',
+    funding: 'Bootstrapped',
+    staffSize: 7
+}
+
+
+console.log(cyclo)
+
+///DOT NOTATION
+
+console.log(cyclo.courses)
+console.log(cyclo['ownership'])
+
+//Challenge
+
+console.log(`${cyclo['nameOfOrganization']} offer ${cyclo.courses.length} which are ${cyclo.courses} and they are very good at teaching ${cyclo.courses[3]}`)
+
+
+
+
+
+
+
+
+
+
 
     
 
