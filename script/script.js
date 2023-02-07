@@ -646,11 +646,138 @@ if ( markBMI > johnBMI) {
 
 }
 
+/// FOR LOOP
+// for(let i = 1; i <= 100; i++) {
+//     console.log(`Lifting weigths ${i} 🏋️‍♂️`)
+// }
 
 
 
 
+const details = [
+    'pen',
+    'biro',
+    'mouse',
+    'Mifi',
+    'charger',
+    ['pen', 'biro', 'mouse']
+];
 
+for (let i = 0; i < details.length; i++) {
+    console.log(details[i])
+    
+}
+
+const pastYears = [1995, 1997, 2002, 2010];
+const ages = [];
+//forward loop
+for (let i = 0; i < pastYears.length; i++) {
+    ages.push(2023 - pastYears[i])
+}
+
+console.log(ages)
+
+
+//backward loop
+const presentYear = [1995, 1997, 2002, 2010, 2040, 2050, 2070]
+for (let i = presentYear.length -1; i >= 0; i--) {
+    console.log(i, presentYear[i])
+
+}
+
+for (let exercise = 1; exercise <= 3;exercise++) {
+    console.log(`______________Starting workout ${exercise}______________`);
+
+    for (let exe =1; exe < 10; exe++) {
+        console.log(`Exercise ${exercise} Lifting weights ${exe} ���️�����️`)
+    }
+
+}
+
+
+for(let i = 1; i <= 10; i++) {
+    console.log(`Lifting weigths ${i} 🏋️‍♂️`)
+}
+
+// let i = 1;
+// while(i <= 10 ) {
+//     console.log(`Lifting  ${i} 🏋️‍♂️`);
+//     i++
+// }
+
+let dice = Math.trunc(Math.random() * 6 + 1);
+// console.log(dice)
+
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+
+    dice = Math.trunc(Math.random() * 6 )+ 1;
+}
+
+/**
+ 
+Let's improve Steven's tip calculator even more, this time using loops!
+Your tasks:
+1. Create an array 'bills' containing all 10 test bill values
+2. Create empty arrays for the tips and the totals ('tips' and 'totals')
+3. Use the 'calcTip' function we wrote before (no need to repeat) to calculate
+tips and total values (bill + tip) for every bill value in the bills array. Use a for
+loop to perform the 10 calculations!
+Test data: 22, 295, 176, 440, 37, 105, 10, 1100, 86 and 52
+Hints: Call ‘calcTip ‘in the loop and use the push method to add values to the
+tips and totals arrays �
+Bonus:
+4. Bonus: Write a function 'calcAverage' which takes an array called 'arr' as
+an argument. This function calculates the average of all numbers in the given
+array. This is a difficult challenge (we haven't done this before)! Here is how to
+solve it:
+4.1. First, you will need to add up all values in the array. To do the addition,
+start by creating a variable 'sum' that starts at 0. Then loop over the
+array using a for loop. In each iteration, add the current value to the
+'sum' variable. This way, by the end of the loop, you have all values
+added together
+4.2. To calculate the average, divide the sum you calculated before by the
+length of the array (because that's the number of elements)
+4.3. Call the function with the 'totals' array
+GOOD LUCK �
+
+ */
+
+
+function calcTip(newBills) {
+    const tip = newBills >= 50 && newBills <= 300 ? newBills * 0.15 : newBills * 0.2;
+
+    return tip;
+}
+const newBills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const newTips = [];
+const totals = [];
+
+
+
+for (let i = 0; i < newBills.length; i++) {
+    const tip = calcTip(newBills[i]);
+    newTips.push(tip);
+    totals.push(tip + newBills[i]);
+
+}
+
+console.log(newBills, newTips, totals);
+
+
+const calcAverage2 = function(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum = sum + arr[i]; 
+    }
+
+    return sum / arr.length;
+    
+}
+
+console.log(calcAverage2([2, 3, 7]))
+console.log(calcAverage2(totals))
+console.log(calcAverage2(newTips))
 
 
 
