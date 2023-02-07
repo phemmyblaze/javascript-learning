@@ -546,6 +546,114 @@ console.log(cyclo['ownership'])
 console.log(`${cyclo['nameOfOrganization']} offer ${cyclo.courses.length} which are ${cyclo.courses} and they are very good at teaching ${cyclo.courses[3]}`)
 
 
+/////Object methods
+
+
+
+const booby = {
+    firstName: 'Booby',
+    lastName: 'Akinuliola',
+    birthYear: 1997,
+    job: "Software Engineer",
+    friends: ['Mike', 'Bobola', 'Tinubu'],
+    hasDriversLicense: true,
+
+    // calcAge: function(birthYear) {
+    //     return 2023 - birthYear
+    // }
+    // calcAge: function() {
+    //     return 2023 - this.birthYear
+    // }
+    calcAge: function() {
+        this.age = 2023 - this.birthYear
+        return this.age;
+    },
+
+
+    getSummary: function() {
+        return`My name is ${this.firstName} ${this.lastName} and am a ${this.job} and he has ${this.hasDriversLicense ? 'a' : 'no'} drivers license`
+    }
+}
+
+console.log(booby.calcAge())
+
+console.log(booby.age)
+console.log(booby.getSummary())
+console.log(booby.hasDriversLicense)
+
+
+
+////CODING CHALLENGE
+
+/* 
+
+Let's go back to Mark and John comparing their BMIs! This time, let's use objects to
+implement the calculations! Remember: BMI = mass / height ** 2 = mass
+/ (height * height) (mass in kg and height in meter)
+Your tasks:
+1. For each of them, create an object with properties for their full name, mass, and
+height (Mark Miller and John Smith)
+2. Create a 'calcBMI' method on each object to calculate the BMI (the same
+method on both objects). Store the BMI value to a property, and also return it
+from the method
+3. Log to the console who has the higher BMI, together with the full name and the
+respective BMI. Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
+Test data: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m
+tall.
+GOOD LUCK �
+
+*/
+
+const mark = {
+    fName: 'Mark',
+    lName: 'Miller',
+    weight: 78,
+    height: 1.69,
+
+
+    calcBMI: function() {
+        this.mass = this.weight / this.height ** 2
+        return this.mass
+    }
+}
+console.log(mark.calcBMI())
+
+
+
+const john = {
+    fName: 'John',
+    lName: 'Smith',
+    weight: 92,
+    height: 1.95,
+
+
+    calcBMI: function() {
+        this.mass = this.weight / this.height ** 2
+        return this.mass
+    }
+}
+
+console.log(john.calcBMI())
+
+
+
+if ( markBMI > johnBMI) {
+    console.log(`${mark.fName} BMI ${mark.mass} higher than ${john.fName} BMI ${john.mass}!`)
+} else if (johnBMI <  markBMI) {
+    console.log(`${john.fName} is higher than ${mark.fName}!`)
+} else {
+    console.log(`${mark.fName} and ${john.fName} are equal!`)
+
+}
+
+
+
+
+
+
+
+
+
 
 
 
