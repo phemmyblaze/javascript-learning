@@ -94,7 +94,7 @@ if (markBMI2 > johnBMI2) {
 //TYPE CONVERSION / TYPE COERCION
 
 const courrentYear = "2023";
-console.log(courrentYear)
+// console.log(courrentYear)
 
 console.log(courrentYear + 18)
 console.log(Number(courrentYear) + 18);
