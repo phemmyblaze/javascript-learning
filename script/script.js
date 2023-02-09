@@ -779,7 +779,38 @@ console.log(calcAverage2([2, 3, 7]))
 console.log(calcAverage2(totals))
 console.log(calcAverage2(newTips))
 
+////Write a function that reverse the word
 
+function solution(str) {
+    // let splitWord = str.split("");
+    // let reverseWord = splitWord.reverse()
+    // let joinWord = reverseWord.join("");
+
+
+    // return joinWord
+
+    return str.split("").reverse().join("")
+}
+
+console.log(solution("Akinbobola"))
+console.log(solution("Python"))
+console.log(solution("Cyclobold"))
+console.log(solution("Laptop"))
+console.log(solution("Run"))
+
+
+//Return abbrevation of name
+function abbrevName(name){
+    const answer = [name[0]]
+    for(let i = 0; i < name.length; i++) {
+        if(name[i] === " ") {
+            answer.push(name[i + 1]);
+        }
+    }
+    return answer.map(el => el.toUpperCase()).join(".")
+}
+
+console.log(abbrevName('Akinuliola Akinbobola'));
 
 
 
