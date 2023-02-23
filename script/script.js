@@ -813,6 +813,131 @@ function abbrevName(name){
 console.log(abbrevName('Akinuliola Akinbobola'));
 
 
+//////////////////// LEARNING HOW JAVASCRIPT WORKS BEHIND THE SCENES USING INBUILT FUNCTIONS//////////////////////// 
+
+///SCOPE CHAIN
+
+const myName = 'Akinbobola';
+
+function first() {
+    const age = 30;
+
+    if (age >= 30) {
+
+        const decade = 3;
+        let millenial = true;
+    }
+
+
+    function second() {
+        const job = 'software engineer';
+
+        console.log(`${myName} is a ${age} old ${job} `)
+    }
+
+    second();
+}
+
+first();
+
+function calcage(birthYear) {
+    const age = 2037 - birthYear;
+    console.log(firstname)
+    return age;
+}
+
+const firstname = 'John';
+calcage(1997);
+
+
+
+////HOISTING
+// console.log(names)
+// console.log(jobs)
+// console.log(yearsss)
+// var names = 'sunday';
+// let jobs = 'software';
+// const yearsss = 1997;
+
+/////coding challenge DATA STRUCTURES
+
+
+const game = {
+    team1: 'Bayern Munich',
+    team2: 'Borrussia Dortmund',
+    players: [
+    [
+    'Neuer',
+    'Pavard',
+    'Martinez',
+    'Alaba',
+    'Davies',
+    'Kimmich',
+    'Goretzka',
+    'Coman',
+    'Muller',
+    'Gnarby',
+    'Lewandowski',
+    ],
+    [
+    'Burki',
+    'Schulz',
+    'Hummels',
+    'Akanji',
+    'Hakimi',
+    'Weigl',
+    'Witsel',
+    'Hazard',
+    'Brandt',
+    'Sancho',
+    'Gotze',
+    ],
+    ],
+    score: '4:0',
+    scored: ['Lewandowski', 'Gnarby', 'Lewandowski',
+    'Hummels'],
+    date: 'Nov 9th, 2037',
+    odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+    },
+
+   
+};
+
+const [players1, player2] = game.players;
+console.log(players1, player2);
+
+const [gk, ...fieldPlayers] = players1;
+console.log(gk, fieldPlayers);
+
+const allPlayers = [...players1,...player2];
+console.log(allPlayers);
+
+const player1Final= [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+console.log(player1Final);
+
+
+
+const {odds: {team1, x:draw, team2}} = game;
+console.log(team1, draw, team2)
+
+const printGoals = function(...players) {
+    console.log(players)
+    console.log(`${players.length} goals were scored`)
+}
+
+printGoals(...game.scored)
+
+team1 < team2 && console.log(`team1 is more likely to win`) 
+
+
+
+
+
+    
+
 
 
 
