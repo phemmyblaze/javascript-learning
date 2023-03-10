@@ -1115,7 +1115,20 @@ poll.displayResults.call({answers: [5, 2, 3]})
 // § Data 1: [5, 2, 3]
 // § Data 2: [1, 5, 3, 9, 6, 1]
 
-    
+const arr = ["apple", "banana", "cherry", "date"];
+
+localStorage.setItem("myArray", JSON.stringify(arr));
+
+const retrievedArray = JSON.parse(localStorage.getItem("myArray"));
+
+const userInput = "ch";
+
+
+const regex = new RegExp(userInput, "gi"); 
+
+const matchingValues = retrievedArray.filter(str => str.match(regex));
+
+console.log(matchingValues); 
 
 
 
